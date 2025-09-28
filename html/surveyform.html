@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Feedback Survey</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Community Feedback Survey</h1>
+    <p id="description">We value your thoughts! Please fill out this short survey to help us improve.</p>
+
+    <form id="survey-form">
+        <label id="name-label" for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+
+        <label id="email-label" for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter a valid email" />
+
+        <label id="number-label" for="number">Age</label>
+        <input type="number" id="number" name="age" min="10" max="100" placeholder="Enter your age (10–100)" />
+
+        <label for="dropdown">How did you hear about us?</label>
+        <select id="dropdown" name="referral">
+            <option value="">--Select an option--</option>
+            <option value="social">Social Media</option>
+            <option value="friend">Friend or Family</option>
+            <option value="event">Local Event</option>
+        </select>
+
+        <label>How satisfied are you with our services?</label>
+        <div class="radio-group">
+            <label><input type="radio" name="satisfaction" value="very" /> Very Satisfied</label>
+            <label><input type="radio" name="satisfaction" value="somewhat" /> Somewhat Satisfied</label>
+            <label><input type="radio" name="satisfaction" value="not" /> Not Satisfied</label>
+        </div>
+
+        <label>What areas would you like us to improve?</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" value="communication" /> Communication</label>
+            <label><input type="checkbox" value="speed" /> Response Time</label>
+            <label><input type="checkbox" value="support" /> Customer Support</label>
+            <label><input type="checkbox" value="features" /> New Features</label>
+        </div>
+
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Share your thoughts..."></textarea>
+
+        <button type="submit" id="submit">Submit Survey</button>
+    </form>
+
+</body>
+
+</html>
