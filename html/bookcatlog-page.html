@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Catalog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background-color: #34495e;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tfoot td {
+            font-weight: bold;
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Personal Book Catalog</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Publication Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Midnight Library</td>
+                <td>Matt Haig</td>
+                <td>Fiction</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>Atomic Habits</td>
+                <td>James Clear</td>
+                <td>Self-Help</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>Born a Crime</td>
+                <td>Trevor Noah</td>
+                <td>Memoir</td>
+                <td>2016</td>
+            </tr>
+            <tr>
+                <td>Half of a Yellow Sun</td>
+                <td>Chimamanda Ngozi Adichie</td>
+                <td>Historical Fiction</td>
+                <td>2006</td>
+            </tr>
+            <tr>
+                <td>Sapiens</td>
+                <td>Yuval Noah Harari</td>
+                <td>History</td>
+                <td>2011</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Books: 5</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>
