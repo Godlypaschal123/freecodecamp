@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Multimedia Player</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            margin: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        section {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #34495e;
+        }
+
+        audio,
+        video {
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 600px;
+            display: block;
+        }
+
+        p {
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Multimedia Player</h1>
+
+    <section>
+        <h2>Now Playing: Sailing Away</h2>
+        <audio controls aria-label="Audio track titled Sailing Away">
+            <source src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section>
+        <h2>Featured Video: Understanding the Map Method</h2>
+        <video controls width="600" aria-label="Video tutorial explaining the map method in JavaScript">
+            <source src="https://cdn.freecodecamp.org/curriculum/labs/What is the map method and how does it work.mp4"
+                type="video/mp4">
+            <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English Subtitles">
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+    <section>
+        <h2>Transcript</h2>
+        <p>The map method in JavaScript is used to create a new array by applying a function to each element of an
+            existing array. It does not modify the original array and is commonly used for transforming data
+            efficiently. In this video, we explore how map works, its syntax, and practical examples to help you
+            understand its power in functional programming.</p>
+    </section>
+
+</body>
+
+</html>
