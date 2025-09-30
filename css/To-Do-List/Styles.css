@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    margin-bottom: 20px;
+}
+
+.sub-item {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sub-item-link {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+/* Visited link */
+.sub-item-link:visited {
+    color: #6a0dad;
+}
+
+/* Hover effect */
+.sub-item-link:hover {
+    color: #ff6600;
+}
+
+/* Focus effect */
+.sub-item-link:focus {
+    outline: 2px solid #00cc99;
+}
+
+/* Active (clicked) effect */
+.sub-item-link:active {
+    color: #cc0000;
+}
