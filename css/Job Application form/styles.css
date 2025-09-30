@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* First input field styling */
+input:first-of-type {
+    border-radius: 20px;
+}
+
+/* Focus styling */
+input:focus,
+textarea:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+/* Valid and invalid styling */
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: green;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: red;
+}
+
+/* Button styling */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Radio group styling */
+.radio-group {
+    margin-top: 20px;
+}
+
+.radio-group input[type="radio"]:checked {
+    border: 2px solid #0077cc;
+    background-color: #e0f0ff;
+    box-shadow: 0 0 5px #0077cc;
+}
+
+.radio-group input[type="radio"]:checked+label {
+    color: #0077cc;
+    font-weight: bold;
+}
