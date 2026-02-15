@@ -1,0 +1,34 @@
+/* Full viewport background */
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #87CEFA 0%, #7CFC00 100%);
+    /* sky to grass */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Tom GIF animation */
+.tom {
+    position: absolute;
+    bottom: 50px;
+    /* distance from bottom of screen */
+    left: -200px;
+    /* start offscreen left */
+    width: 200px;
+    /* size of Tom */
+    height: auto;
+    animation: run 6s linear infinite;
+}
+
+/* Move Tom from left to right */
+@keyframes run {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
