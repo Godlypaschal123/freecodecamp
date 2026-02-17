@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    border-right: 2px solid black;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#navbar header {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+}
+
+/* Main content */
+#main-doc {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.main-section {
+    margin-bottom: 40px;
+}
+
+code {
+    display: block;
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Media Query (Required by FCC) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #navbar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+
+    #main-doc {
+        margin-left: 0;
+    }
+}
