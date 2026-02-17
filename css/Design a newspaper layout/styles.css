@@ -1,0 +1,68 @@
+.newspaper-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "title title title"
+        "feature-article feature-article cover-image"
+        "secondary-article secondary-article cover-image"
+        "small-article1 small-article2 small-article3";
+    padding: 20px;
+}
+
+.title {
+    grid-area: title;
+}
+
+.feature-article {
+    grid-area: feature-article;
+}
+
+.secondary-article {
+    grid-area: secondary-article;
+}
+
+.cover-image {
+    grid-area: cover-image;
+}
+
+.small-article1 {
+    grid-area: small-article1;
+}
+
+.small-article2 {
+    grid-area: small-article2;
+}
+
+.small-article3 {
+    grid-area: small-article3;
+}
+
+.cover-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Optional styling for readability */
+header.title h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+article h2,
+article h3 {
+    margin: 0 0 10px 0;
+}
+
+article p {
+    margin: 0 0 10px 0;
+}
+
+.newspaper-layout>* {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
