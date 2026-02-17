@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* All spans inline-block */
+span {
+    display: inline-block;
+}
+
+/* Row gradients using attribute selectors */
+tr[class="read"] {
+    background-image: linear-gradient(to right, #d4edda, white);
+}
+
+tr[class="to-read"] {
+    background-image: linear-gradient(to right, #fff3cd, white);
+}
+
+tr[class="in-progress"] {
+    background-image: linear-gradient(to right, #cce5ff, white);
+}
+
+/* Status styling per row */
+tr[class="read"] span[class="status"] {
+    border: 1px solid green;
+    background-image: linear-gradient(to right, #b7f7c3, white);
+}
+
+tr[class="to-read"] span[class="status"] {
+    border: 1px solid orange;
+    background-image: linear-gradient(to right, #ffe8a1, white);
+}
+
+tr[class="in-progress"] span[class="status"] {
+    border: 1px solid blue;
+    background-image: linear-gradient(to right, #a8d8ff, white);
+}
+
+/* Status and rate sizing */
+span[class="status"],
+span[class^="rate"] {
+    height: 25px;
+    width: 80px;
+    padding: 3px;
+}
+
+/* Rating circles */
+span[class^="rate"]>span {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 2px;
+    height: 12px;
+    width: 12px;
+    background-color: white;
+}
+
+/* ONE rating (first descendant only) */
+span[class~="one"]>span:first-child {
+    background-image: linear-gradient(to right, gold, orange);
+}
+
+/* TWO rating (first two descendants) */
+span[class~="two"]>span:nth-child(-n+2) {
+    background-image: linear-gradient(to right, gold, orange);
+}
+
+/* THREE rating (all three descendants) */
+span[class~="three"]>span {
+    background-image: linear-gradient(to right, gold, orange);
+}
