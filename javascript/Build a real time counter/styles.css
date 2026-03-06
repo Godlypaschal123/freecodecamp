@@ -1,0 +1,27 @@
+.counter-container {
+    width: 300px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+}
+
+
+#text-input {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+
+#char-count {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+#char-count.max {
+    color: red;
+    font-weight: bold;
+}
