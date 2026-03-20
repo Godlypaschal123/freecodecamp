@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCodeCamp JS Playground</title>
+    <!-- Modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Interactive Playground</h1>
+        <p>A collection of mini-applications powered by vanilla JS!</p>
+    </header>
+    <main class="dashboard">
+        <!-- Triviabot -->
+        <section class="card" id="triviabot-card">
+            <h2>🤖 Triviabot</h2>
+            <p>Your coding fun fact guide.</p>
+            <div id="trivia-output" class="output-box">Press the button for a fact!</div>
+            <button id="btn-trivia">Get Fact</button>
+        </section>
+
+        <!-- Operators -->
+        <section class="card" id="operators-card">
+            <h2>🔢 Game Variables</h2>
+            <div class="stat">
+                <span>Counter: <span id="val-counter" class="highlight">10</span></span>
+                <button id="btn-inc-counter">++</button>
+            </div>
+            <div class="stat">
+                <span>Score: <span id="val-score" class="highlight">8</span></span>
+                <button id="btn-inc-score">++</button>
+            </div>
+            <div class="stat">
+                <span>Coins: <span id="val-coins" class="highlight">3</span></span>
+                <button id="btn-dec-coins">--</button>
+            </div>
+            <div class="stat">
+                <span>Health: <span id="val-health" class="highlight">7</span></span>
+                <button id="btn-dec-health">--</button>
+            </div>
+        </section>
+
+        <!-- Lunch Picker -->
+        <section class="card" id="lunch-picker-card">
+            <h2>🍱 Lunch Picker</h2>
+            <input type="text" id="input-lunch" placeholder="Enter new lunch item">
+            <div class="button-group">
+                <button id="btn-add-start">Add First</button>
+                <button id="btn-add-end">Add Last</button>
+                <button id="btn-rem-start" class="btn-danger">Rem First</button>
+                <button id="btn-rem-end" class="btn-danger">Rem Last</button>
+                <button id="btn-random" class="btn-special">Pick Random</button>
+            </div>
+            <div id="lunch-menu" class="output-box">The menu is empty.</div>
+            <div id="lunch-random" class="highlight-text"></div>
+        </section>
+
+        <!-- String Inspector -->
+        <section class="card" id="inspector-card">
+            <h2>🔍 String Inspector</h2>
+            <p>Target sentence: "freeCodeCamp is a great place to learn web development."</p>
+            <input type="text" id="input-search" placeholder="Type a word to search...">
+            <button id="btn-search">Check Includes & Slice</button>
+            <div id="inspector-output" class="output-box"></div>
+        </section>
+
+        <!-- String Transformer -->
+        <section class="card" id="transformer-card">
+            <h2>✨ String Transformer</h2>
+            <p>Target finding 'cats' globally.</p>
+            <input type="text" id="input-transform" value="I love cats and cats are fun!">
+            <div class="button-group">
+                <button id="btn-replace">Transform To 'dogs'</button>
+            </div>
+            <div id="transformer-output" class="output-box"></div>
+        </section>
+    </main>
+
+    <!-- Essential logic scripts parsed dynamically -->
+    <script src="Triviabot.js" defer></script>
+    <script src="Debugging Increment and Decrement Operators/Operators.js" defer></script>
+    <script src="Building a launch picker program/picker.js" defer></script>
+    <script src="Building a string inspector/inspector.js" defer></script>
+    <script src="Build a string transformer/stringtransformer.js" defer></script>
+</body>
+</html>
