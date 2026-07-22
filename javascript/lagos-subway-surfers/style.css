@@ -1,0 +1,382 @@
+/* Lagos Subway Surfers - Danfo Dash 3D Styles */
+:root {
+    --lagos-green: #008751;
+    --danfo-yellow: #FFD700;
+    --danfo-stripe: #1A1A1A;
+    --danger-red: #FF3B30;
+    --accent-orange: #FF9500;
+    --dark-bg: #0B0E14;
+    --card-bg: rgba(18, 24, 38, 0.88);
+    --font-heading: 'Press Start 2P', cursive, sans-serif;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+    font-family: var(--font-main);
+    color: #FFFFFF;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* HUD Overlay */
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.score-box {
+    min-width: 160px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--danfo-yellow);
+    font-weight: 800;
+}
+
+#score-val {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.multiplier-box {
+    border-color: var(--lagos-green);
+}
+
+#multiplier-val {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #00FF88;
+}
+
+.coin-box {
+    flex-direction: row;
+    gap: 10px;
+    border-color: var(--danfo-yellow);
+}
+
+.coin-icon {
+    font-size: 1.5rem;
+}
+
+#coin-val {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--danfo-yellow);
+}
+
+/* Powerup Bar */
+#powerup-bar {
+    max-width: 320px;
+    margin: 15px auto 0 auto;
+    background: var(--card-bg);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--danfo-yellow);
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+#powerup-name {
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: var(--danfo-yellow);
+    letter-spacing: 1px;
+}
+
+.progress-outer {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+#powerup-progress {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00FF88, var(--danfo-yellow), var(--danger-red));
+    transition: width 0.1s linear;
+}
+
+/* Hoverboard Button */
+.hoverboard-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: linear-gradient(135deg, rgba(0, 135, 81, 0.9), rgba(0, 255, 136, 0.9));
+    border: 3px solid var(--danfo-yellow);
+    padding: 12px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
+    transition: all 0.2s ease;
+}
+
+.hoverboard-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 14px 35px rgba(0, 255, 136, 0.7);
+}
+
+.hoverboard-btn:active {
+    transform: scale(0.96);
+}
+
+.hb-icon {
+    font-size: 2rem;
+}
+
+.hb-label {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.hb-label small {
+    color: var(--danfo-yellow);
+    font-size: 0.7rem;
+}
+
+.hb-count {
+    background: var(--danfo-yellow);
+    color: #1A1A1A;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+/* Fullscreen Overlays */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 14, 20, 0.78);
+    backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden, #hud.hidden, #powerup-bar.hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-card {
+    background: linear-gradient(145deg, rgba(20, 28, 45, 0.95), rgba(12, 16, 26, 0.95));
+    border: 3px solid var(--danfo-yellow);
+    border-radius: 28px;
+    padding: 35px 40px;
+    width: 90%;
+    max-width: 560px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.25);
+    animation: cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.badge {
+    display: inline-block;
+    background: var(--lagos-green);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 135, 81, 0.4);
+}
+
+.alert-badge {
+    background: var(--danger-red);
+    box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    text-shadow: 4px 4px 0px var(--lagos-green);
+}
+
+.highlight {
+    color: var(--danfo-yellow);
+    text-shadow: 4px 4px 0px #000000;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #A0AEC0;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.controls-guide {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controls-guide h3 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--danfo-yellow);
+    margin-bottom: 12px;
+}
+
+.keys-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.full-width-key {
+    grid-column: span 2;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.key-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #E2E8F0;
+}
+
+kbd {
+    background: #2D3748;
+    border: 1px solid #4A5568;
+    border-bottom: 3px solid #1A202C;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-family: monospace;
+    color: var(--danfo-yellow);
+}
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, var(--danfo-yellow), var(--accent-orange));
+    color: #1A1A1A;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Game over specific */
+.gameover-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--danger-red);
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.final-stats {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #CBD5E0;
+}
+
+.stat-row strong {
+    color: var(--danfo-yellow);
+    font-size: 1.2rem;
+}

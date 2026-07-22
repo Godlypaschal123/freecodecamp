@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Subway Surfers - Real Human Edition 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for arcade / bold typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Three.js for 3D Subway Surfers Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <!-- 3D WebGL Canvas will be rendered here -->
+
+        <!-- HUD (Heads-Up Display) overlay -->
+        <div id="hud" class="hidden">
+            <div class="hud-top">
+                <div class="stat-box score-box">
+                    <span class="stat-label">SCORE</span>
+                    <span id="score-val">000000</span>
+                </div>
+                <div class="stat-box multiplier-box">
+                    <span id="multiplier-val">1x</span>
+                </div>
+                <div class="stat-box coin-box">
+                    <span class="coin-icon">🇳🇬</span>
+                    <span id="coin-val">0</span>
+                </div>
+            </div>
+
+            <!-- Active Powerup / Hoverboard bar -->
+            <div id="powerup-bar" class="hidden">
+                <span id="powerup-name">JETPACK SKY FLYER 🚀</span>
+                <div class="progress-outer">
+                    <div id="powerup-progress"></div>
+                </div>
+            </div>
+
+            <!-- Hoverboard Shield Trigger Button -->
+            <div id="hoverboard-hud-btn" class="hoverboard-btn">
+                <span class="hb-icon">🛹</span>
+                <span class="hb-label">HOVERBOARD <br><small>Press [E] / Tap</small></span>
+                <span id="hoverboard-count" class="hb-count">x3</span>
+            </div>
+        </div>
+
+        <!-- START / MENU OVERLAY -->
+        <div id="menu-overlay" class="overlay active">
+            <div class="menu-card">
+                <div class="badge">🇳🇬 3D SUBWAY SURFERS EDITION 🇳🇬</div>
+                <h1 class="title">DANFO<br><span class="highlight">SURFERS</span></h1>
+                <p class="subtitle">Outrun the police officer across sunset railway tracks in 3D! Jump wooden crates, fly with Jetpacks & activate Hoverboard shields!</p>
+                
+                <div class="controls-guide">
+                    <h3>🎮 CONTROLS</h3>
+                    <div class="keys-grid">
+                        <div class="key-item"><kbd>A</kbd> / <kbd>←</kbd> <span>Lane Left</span></div>
+                        <div class="key-item"><kbd>D</kbd> / <kbd>→</kbd> <span>Lane Right</span></div>
+                        <div class="key-item"><kbd>W</kbd> / <kbd>↑</kbd> / <kbd>Space</kbd> <span>Jump</span></div>
+                        <div class="key-item"><kbd>S</kbd> / <kbd>↓</kbd> <span>Slide / Roll</span></div>
+                        <div class="key-item full-width-key"><kbd>E</kbd> / <kbd>Shift</kbd> <span>Activate Flying Hoverboard (Crash Shield) 🛹</span></div>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="btn-primary">START RUNNING 🚀</button>
+            </div>
+        </div>
+
+        <!-- GAME OVER OVERLAY -->
+        <div id="gameover-overlay" class="overlay hidden">
+            <div class="menu-card gameover-card">
+                <div class="badge alert-badge">OYA NOW! POLICE OFFICER CATCH YOU! 👮‍♂️</div>
+                <h2 class="gameover-title">BUSTED!</h2>
+                
+                <div class="final-stats">
+                    <div class="stat-row">
+                        <span>DISTANCE RUN:</span>
+                        <strong id="final-score">0</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>NAIRA COLLECTED:</span>
+                        <strong id="final-coins">🇳🇬 0</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>HIGH SCORE:</span>
+                        <strong id="high-score">0</strong>
+                    </div>
+                </div>
+
+                <button id="restart-btn" class="btn-primary">TRY AGAIN (RUN BACK!) 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
